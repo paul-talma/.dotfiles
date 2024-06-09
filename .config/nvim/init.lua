@@ -1,2 +1,4 @@
-require("lua.core.lazy")
-require("lua.core.options")
+require("core.options")
+require("core.keymaps")
+require("core.autocmds")
+require("core.lazy")
