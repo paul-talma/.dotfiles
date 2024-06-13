@@ -5,7 +5,7 @@ return {
 		"hrsh7th/cmp-buffer",
 		"hrsh7th/cmp-path",
 	},
-	
+
 	config = function()
 		local cmp = require("cmp")
 
@@ -26,6 +26,5 @@ return {
 				{ name = "path" },
 			}),
 		})
-	end
+	end,
 }
-				
