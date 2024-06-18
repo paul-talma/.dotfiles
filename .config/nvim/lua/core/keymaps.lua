@@ -29,6 +29,9 @@ end, { desc = "Toggle scroll lock" })
 map("n", "<CR>", "ciw", opts)
 map("n", "<BS>", "ci", opts)
 
+-- 'x' doesn't overwrite register
+map("n", "x", '"_x')
+
 -- dashboard
 map("n", "<leader>;", "<cmd>Alpha<CR>", { desc = "Dashboard" })
 
@@ -37,7 +40,8 @@ map("n", "<C-s>", ":Telescope current_buffer_fuzzy_find<CR>", opts)
 
 -- terminal escape
 map("t", "<Esc>", "<C-\\><C-n>")
-map("n", "<leader>t", "<C-w>v<cmd>terminal<CR>i", { desc = "Open terminal to the right" })
+map({ "n", "t" }, "<C-t>", "<cmd>ToggleTerm<CR>", { desc = "Open terminal" })
+-- map("n", "<leader>t", "<C-w>v<cmd>terminal<CR>i", { desc = "Open terminal to the right" })
 
 -- TODO: make better mapping
 -- compile and run C++ code
