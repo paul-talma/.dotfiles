@@ -5,4 +5,9 @@ return -- Lua
 	opts = {
 		-- add any custom options here
 	},
+	-- config = function()
+	-- 	local map = vim.keymap.set
+	--
+	-- 	map("n", "<leader>sr", "<cmd>lua require('persistence').load()<cr>", { desc = "Restore session" })
+	-- end,
 }
