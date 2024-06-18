@@ -1,5 +1,6 @@
 import = [
-  "~/.config/alacritty/themes/themes/gruvbox_material.toml"
+  "~/.config/alacritty/themes/themes/gruvbox_material.toml",
+	# "~/.config/alacritty/themes/themes/tokyo-night.toml",
 ]
 
 live_config_reload = true
@@ -38,7 +39,7 @@ style = "Text Italic"
 
 [window]
 decorations = "buttonless"
-opacity = 0.999
+opacity = 0.85
 
 [window.dimensions]
 columns = 120
