@@ -9,8 +9,8 @@ return {
 	},
 	event = "VeryLazy",
 	keys = {
-		{ "<leader>e", ":Neotree toggle float<CR>", silent = true, desc = "Floating File Explorer" },
-		{ "<leader><tab>", ":Neotree toggle right<CR>", silent = true, desc = "Right File Explorer" },
+		{ "<leader>e", ":Neotree filesystem reveal float<CR>", silent = true, desc = "Floating File Explorer" },
+		{ "<leader><tab>", ":Neotree filesystem reveal right<CR>", silent = true, desc = "Right File Explorer" },
 		{ "<leader>fe", ":Neotree focus right<CR>", silent = true, desc = "Foocus Right File Explorer" },
 	},
 	config = function()

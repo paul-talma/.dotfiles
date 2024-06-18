@@ -22,5 +22,6 @@ return {
 
 		keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
 		keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
+		keymap.set("n", "<leader>fg", "<cmd>Telescope oldfiles<cr>", { desc = "Find string in cwd" })
 	end,
 }
