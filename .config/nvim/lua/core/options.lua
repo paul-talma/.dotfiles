@@ -7,9 +7,10 @@ vim.g.loaded_netrwPlugin = 1
 -- line numbers
 opt.relativenumber = true -- TODO: change to absolute in insert mode
 opt.number = true
+opt.numberwidth = 2 -- set number column width to 2 {default 4}
 
 -- block cursor
-opt.guicursor = ""
+opt.guicursor = "a:block-blinkwait700-blinkon300-blinkoff50"
 
 -- tabs and indents
 opt.tabstop = 2 -- tab width (spaces)
@@ -31,6 +32,7 @@ opt.termguicolors = true
 opt.background = "dark" -- defaults scheme to dark mode
 -- opt.signcolumn = "yes"
 opt.showmode = false
+opt.cmdwinheight = 1 -- check that this works
 
 -- backspace
 -- opt.backspace = "indent, eol, start"
@@ -45,5 +47,6 @@ opt.splitbelow = true
 -- editing
 opt.updatetime = 100
 opt.wrap = true
+opt.textwidth = 80
 opt.breakindent = true
 opt.scrolloff = 10

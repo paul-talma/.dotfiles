@@ -9,3 +9,7 @@ api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+-- absolute number for insert mode, relative for everything else
+api.nvim_create_autocmd("InsertEnter", { command = "set norelativenumber" })
+api.nvim_create_autocmd("InsertLeave", { command = "set relativenumber" })

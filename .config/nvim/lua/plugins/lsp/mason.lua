@@ -4,7 +4,6 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
-
 	config = function()
 		-- import mason
 		local mason = require("mason")
@@ -29,19 +28,20 @@ return {
 			-- list of servers for mason to install
 			ensure_installed = {
 				"lua_ls",
-				"pyright",
+				"pylsp",
 				"hls",
 				"clangd",
 				"texlab",
 			},
-
-			automatic_installation = true,
 		})
 
 		mason_tool_installer.setup({
 			ensure_installed = {
-				"isort", -- python formatter for imports
-				"black",
+				"prettier", -- prettier formatter
+				"stylua", -- lua formatter
+				"isort", -- python formatter
+				"black", -- python formatter
+				-- "pylint",
 			},
 		})
 	end,

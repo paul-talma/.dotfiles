@@ -1,7 +1,8 @@
 -- set leader key to space
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
-local opts = { noremap = true, silent = true }
+local opts = { noremap = true, silent = false }
 local map = vim.keymap.set
 
 -- exit insert mode with 'jk'
@@ -38,16 +39,20 @@ map("n", "<leader>;", "<cmd>Alpha<CR>", { desc = "Dashboard" })
 -- search current buffer
 map("n", "<C-s>", ":Telescope current_buffer_fuzzy_find<CR>", opts)
 
+-- TODO: fix this
+-- move lines
+-- map("v", "K", "<cmd>m '>-2<CR>gv=gv")
+-- map("v", "J", "<cmd>m '<+1<CR>gv=gv")
+
 -- terminal escape
 map("t", "<Esc>", "<C-\\><C-n>")
 map({ "n", "t" }, "<C-t>", "<cmd>ToggleTerm<CR>", { desc = "Open terminal" })
 -- map("n", "<leader>t", "<C-w>v<cmd>terminal<CR>i", { desc = "Open terminal to the right" })
 
--- TODO: make better mapping
 -- compile and run C++ code
--- map(
--- 	"n",
--- 	"<leader>c",
--- 	":w<CR>:!g++ -std=c++20 % -o %<.out && %<.out<CR>",
--- 	{ desc = "Compile c++ file and run if successful", noremap = true, silent = true }
--- )
+map(
+	"n",
+	"<leader>cr",
+	":w<CR>:!g++ -std=c++20 % -o %<.out && %<.out<CR>",
+	{ desc = "Compile c++ file and run if successful", noremap = true, silent = true }
+)

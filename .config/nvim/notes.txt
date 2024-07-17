@@ -1,0 +1,8 @@
+Nice nvim built-in themes:
+	- desert (like slate, but higher contrast)
+	- evening (dark but high contrast, very similar to desert and slate)
+	- habamax (dark, pastel)
+	- lunaperche (dark high contrast)
+	- quiet (light, monochrome)
+	- retrobox (light, pastel)
+	- slate (dark, pastel, high contrast)
