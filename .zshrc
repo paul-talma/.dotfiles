@@ -8,31 +8,34 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.config/oh-my-zsh
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
+
+# Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+# Path variables
+export XDG_CONFIG_HOME=$HOME/.config
+
+# clima API key
+export OPEN_WEATHER_API_KEY="d0ca126c9eef5a8bd0b0fdb46ac4a416"
+
+# Neovim
+export EDITOR='nvim'
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(
-		git
+		# git
     zsh-syntax-highlighting
     zsh-autosuggestions
     web-search
-    z
+		# common-aliases
+    zoxide
+		colored-man-pages
 	)
 
-source $ZSH/oh-my-zsh.sh
 
-# Neovim
-export EDITOR='nvim'
+source $ZSH/oh-my-zsh.sh
 
 # p10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
