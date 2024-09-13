@@ -10,7 +10,7 @@ opt.number = true
 opt.numberwidth = 2 -- set number column width to 2 {default 4}
 
 -- block cursor
-opt.guicursor = "a:block-blinkwait700-blinkon300-blinkoff50"
+-- opt.guicursor = "a:block-blinkwait700-blinkon300-blinkoff50"
 
 -- tabs and indents
 opt.tabstop = 2 -- tab width (spaces)
@@ -43,6 +43,9 @@ opt.clipboard:append("unnamedplus") -- use system clipboard by default
 -- split locations
 opt.splitright = true
 opt.splitbelow = true
+
+-- conceal level
+opt.conceallevel = 2
 
 -- editing
 opt.updatetime = 100

@@ -37,7 +37,8 @@ return {
 					{
 						"fancy_diagnostics",
 						sources = { "nvim_lsp" },
-						symbols = { error = " ", warn = " ", info = " " },
+						symbols = { error = " ", warn = " ", info = " ", hint = " " },
+						-- symbols = { error = " ", warn = " ", info = " " },
 					},
 					{
 						lazy_status.updates,

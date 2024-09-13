@@ -8,24 +8,42 @@ return {
 		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 	},
 	event = "VeryLazy",
+	init = function()
+		-- do nothing
+	end,
 	keys = {
-		{ "<leader>e", ":Neotree filesystem reveal float<CR>", silent = true, desc = "Floating File Explorer" },
-		{ "<leader><tab>", ":Neotree filesystem reveal right<CR>", silent = true, desc = "Right File Explorer" },
-		{ "<leader>fe", ":Neotree focus right<CR>", silent = true, desc = "Foocus Right File Explorer" },
+		{ "<leader>e", ":Neotree filesystem toggle reveal float<CR>", silent = true, desc = "Floating File Explorer" },
+		{ "<leader><tab>", ":Neotree filesystem toggle reveal right<CR>", silent = true, desc = "Right File Explorer" },
+		-- { "<leader>fe", ":Neotree focus right<CR>", silent = true, desc = "Focus Right File Explorer" },
 	},
 	config = function()
+		vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
+		vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn" })
+		vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo" })
+		vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSignHint" })
+
 		require("neo-tree").setup({
 			enable_git_status = true,
+			close_if_last_window = true,
 			sort_case_insensitive = true,
 			enable_diagnostics = true,
 
-			popup_border_style = "single",
+			popup_border_style = "solid",
 
 			default_component_configs = {
+
+				container = {
+					enable_character_fade = true,
+				},
 
 				modified = {
 					symbol = " ",
 					highlight = "NeoTreeModified",
+				},
+
+				name = {
+					use_git_status_colors = true,
+					highlight = "NeoTreeFileName",
 				},
 
 				git_status = {
@@ -43,6 +61,14 @@ return {
 						conflict = "",
 					},
 				},
+			},
+
+			window = {
+				position = "right",
+			},
+
+			filesystem = {
+				hijack_netrw_behavior = "disabled",
 			},
 
 			source_selector = {

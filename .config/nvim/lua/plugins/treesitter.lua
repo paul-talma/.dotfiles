@@ -30,7 +30,13 @@ return {
 					"vimdoc",
 					"query",
 					"python",
+					"markdown",
+					"markdown_inline",
 				},
+
+				-- dont' know what these do but raises warning if not present
+				modules = {},
+				ignore_install = {},
 			})
 		end,
 	},

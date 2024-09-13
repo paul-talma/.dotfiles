@@ -21,14 +21,25 @@ map({ "n", "x", "o" }, "L", "g_", opts)
 map("n", "j", "gj", opts)
 map("n", "k", "gk", opts)
 
+-- Move up and down 5 lines at a time
+map("n", "J", "5j", opts)
+map("n", "K", "5k", opts)
+
+-- join lines with <leader>j
+map("n", "<leader>j", "<cmd>j<cr>", { desc = "Join line with next" })
+
 -- scroll lock
 map("n", "<leader>sc", function()
 	vim.opt.scrolloff = 999 - vim.o.scrolloff
 end, { desc = "Toggle scroll lock" })
 
+-- use U to redo
+map("n", "U", "<C-r>", { desc = "Redo" })
+
 -- Map enter to ciw in normal mode
 map("n", "<CR>", "ciw", opts)
-map("n", "<BS>", "ci", opts)
+map("v", "<CR>", "c", opts)
+-- map("nv", "<BS>", "ci", opts)
 
 -- 'x' doesn't overwrite register
 map("n", "x", '"_x')
@@ -44,10 +55,22 @@ map("n", "<C-s>", ":Telescope current_buffer_fuzzy_find<CR>", opts)
 -- map("v", "K", "<cmd>m '>-2<CR>gv=gv")
 -- map("v", "J", "<cmd>m '<+1<CR>gv=gv")
 
+-- have esc remove highlighting
+map("n", "<Esc>", "<cmd>noh<CR><Esc>", opts)
+
+-- <leader>p to toggle buffers
+map("n", "<leader>p", "<CMD>b#<CR>", { desc = "Return to previous buffer" })
+
 -- terminal escape
 map("t", "<Esc>", "<C-\\><C-n>")
 map({ "n", "t" }, "<C-t>", "<cmd>ToggleTerm<CR>", { desc = "Open terminal" })
 -- map("n", "<leader>t", "<C-w>v<cmd>terminal<CR>i", { desc = "Open terminal to the right" })
+
+-- delete paragraph
+map("n", "dp", "dip", { desc = "Delete paragraph" })
+
+-- view changes
+map("n", "<leader>w", "<cmd>w !diff % -<CR>", { desc = "View changes" })
 
 -- compile and run C++ code
 map(

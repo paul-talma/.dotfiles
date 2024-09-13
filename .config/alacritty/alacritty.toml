@@ -1,5 +1,7 @@
 import = [
-  "~/.config/alacritty/themes/themes/gruvbox_material.toml",
+  "~/.config/alacritty/themes/themes/gruvppuccin.toml",
+  # "~/.config/alacritty/themes/themes/gruvbox_material.toml",
+  # "~/.config/alacritty/themes/themes/everforest_dark.toml",
 ]
 
 live_config_reload = true
@@ -14,20 +16,44 @@ blinking = "On"
 TERM = "xterm-256color"
 
 [font]
-size = 20
+size = 22
 
+# Menlo
+# [font.normal]
+# family = "MesloLGS NF"
+
+# JetBrains Mono
 [font.normal]
-family = "BlexMono Nerd Font"
-# style = "SemiBold"
-style = "Regular"
+family = "JetBrainsMono Nerd Font"
+# style = "Regular" 
 
-[font.italic]
-family = "BlexMono Nerd Font"
-style = "Text Italic"
+# # Zed Mono Font
+# [font.normal]
+# family = "ZedMono Nerd Font"
+# style = "Regular"
+# # style = "Light"
+#
+# [font.italic]
+# family = "ZedMono Nerd Font"
+# style = "Light Italic"
+#
+# [font.bold]
+# family = "ZedMono Nerd Font"
+# style = "Bold"
 
-[font.bold]
-family = "BlexMono Nerd Font"
-style = "Bold"
+# Blex Mono font
+# [font.normal]
+# family = "BlexMono Nerd Font"
+# # style = "SemiBold"
+# style = "Regular"
+#
+# [font.italic]
+# family = "BlexMono Nerd Font"
+# style = "Text Italic"
+#
+# [font.bold]
+# family = "BlexMono Nerd Font"
+# style = "Bold"
 
 [scrolling]
 # auto_scroll = true
