@@ -13,18 +13,24 @@ return {
 			desc = "Toggle Debugger UI",
 		},
 	},
+
 	-- automatically open/close the DAP UI when starting/stopping the debugger
 	config = function()
-		require("dapui").setup()
+		local dapui = require("dapui")
+
+		dapui.setup()
+
 		local listener = require("dap").listeners
 		listener.after.event_initialized["dapui_config"] = function()
-			require("dapui").open()
+			dapui.open()
 		end
+
 		listener.before.event_terminated["dapui_config"] = function()
-			require("dapui").close()
+			dapui.close()
 		end
+
 		listener.before.event_exited["dapui_config"] = function()
-			require("dapui").close()
+			dapui.close()
 		end
 	end,
 }

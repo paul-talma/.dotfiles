@@ -1,5 +1,6 @@
 return {
 	"utilyre/barbecue.nvim",
+	event = "BufEnter",
 	name = "barbecue",
 	version = "*",
 	dependencies = {

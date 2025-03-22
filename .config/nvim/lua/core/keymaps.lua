@@ -4,7 +4,6 @@ vim.g.maplocalleader = " "
 
 local opts = { noremap = true, silent = false }
 local map = vim.keymap.set
-
 -- exit insert mode with 'jk'
 map("i", "jk", "<ESC>", { desc = "Exit insert mode with 'jk'" })
 
@@ -13,17 +12,20 @@ map("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })
 map("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })
 map("n", "<leader>sx", "<cmd>close<CR>", { desc = "Close current split" })
 
+-- delete buffer with <leader>bx
+map("n", "<leader>bx", "<cmd>bdelete<CR>", { desc = "Delete current buffer" })
+
 -- Move to start/end of line
 map({ "n", "x", "o" }, "H", "^", opts)
 map({ "n", "x", "o" }, "L", "g_", opts)
 
 -- Move line on the screen rather than by line in the file
-map("n", "j", "gj", opts)
-map("n", "k", "gk", opts)
+map({ "n", "v" }, "j", "gj", opts)
+map({ "n", "v" }, "k", "gk", opts)
 
 -- Move up and down 5 lines at a time
-map("n", "J", "5j", opts)
-map("n", "K", "5k", opts)
+map({ "n", "v" }, "J", "5gj", opts)
+map({ "n", "v" }, "K", "5gk", opts)
 
 -- join lines with <leader>j
 map("n", "<leader>j", "<cmd>j<cr>", { desc = "Join line with next" })
@@ -41,14 +43,15 @@ map("n", "<CR>", "ciw", opts)
 map("v", "<CR>", "c", opts)
 -- map("nv", "<BS>", "ci", opts)
 
+-- control-backspace deletes whole word
+map("i", "<M-BS>", "<ESC>ciW")
+map("n", "<M-BS>", "diW")
+
 -- 'x' doesn't overwrite register
 map("n", "x", '"_x')
 
 -- dashboard
 map("n", "<leader>;", "<cmd>Alpha<CR>", { desc = "Dashboard" })
-
--- search current buffer
-map("n", "<C-s>", ":Telescope current_buffer_fuzzy_find<CR>", opts)
 
 -- TODO: fix this
 -- move lines
@@ -71,11 +74,3 @@ map("n", "dp", "dip", { desc = "Delete paragraph" })
 
 -- view changes
 map("n", "<leader>w", "<cmd>w !diff % -<CR>", { desc = "View changes" })
-
--- compile and run C++ code
-map(
-	"n",
-	"<leader>cr",
-	":w<CR>:!g++ -std=c++20 % -o %<.out && %<.out<CR>",
-	{ desc = "Compile c++ file and run if successful", noremap = true, silent = true }
-)

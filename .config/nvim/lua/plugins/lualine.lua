@@ -1,6 +1,10 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons", "meuter/lualine-so-fancy.nvim" },
+	dependencies = {
+		"echasnovski/mini.icons",
+		"meuter/lualine-so-fancy.nvim",
+	},
+
 	config = function()
 		local lualine = require("lualine")
 		local lazy_status = require("lazy.status")
@@ -13,9 +17,26 @@ return {
 				component_separators = { left = "|", right = "|" },
 				section_separators = { left = "", right = "" },
 			},
+
 			sections = {
-				lualine_b = { "fancy_branch" },
+
+				lualine_a = {
+					{ "mode" },
+				},
+
+				lualine_b = {
+					{ "fancy_branch" },
+				},
+
 				lualine_c = {
+					-- {
+					-- 	"fancy_cwd",
+					-- 	symbols = {
+					-- 		modified = "  ",
+					-- 		readonly = "  ",
+					-- 		unnamed = "  ",
+					-- 	},
+					-- },
 					{
 						"filename",
 						path = 1,
@@ -31,23 +52,32 @@ return {
 						-- end
 					},
 					{ "fancy_diff" },
-					{ "fancy_searchcount" },
 				},
+
 				lualine_x = {
+					{ "fancy_macro" },
 					{
 						"fancy_diagnostics",
 						sources = { "nvim_lsp" },
 						symbols = { error = " ", warn = " ", info = " ", hint = " " },
-						-- symbols = { error = " ", warn = " ", info = " " },
 					},
+					{ "fancy_searchcount" },
 					{
 						lazy_status.updates,
 						cond = lazy_status.has_updates,
 						color = { fg = "#ff9e64" },
 					},
 				},
-				lualine_y = { "filetype" },
-				lualine_z = { "progress" },
+
+				lualine_y = {
+					-- { "fancy_location" },
+					{ "progress" },
+				},
+
+				lualine_z = {
+					{ "fancy_filetype" },
+					{ "fancy_lsp_servers" },
+				},
 			},
 		})
 	end,

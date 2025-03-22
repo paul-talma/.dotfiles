@@ -45,7 +45,7 @@ source $ZSH/oh-my-zsh.sh
 [ -f "/Users/paultalma/.ghcup/env" ] && source "/Users/paultalma/.ghcup/env"
 
 # opam configuration
-[[ ! -r /Users/paultalma/.opam/opam-init/init.zsh ]] || source /Users/paultalma/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+# [[ ! -r /Users/paultalma/.opam/opam-init/init.zsh ]] || source /Users/paultalma/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 
 # >>> conda initialize >>>

@@ -1,0 +1,42 @@
+return {
+	-- 	"stevearc/oil.nvim",
+	-- 	---@module "oil"
+	-- 	---@type oil.SetupOpts
+	-- 	opts = {},
+	-- 	dependencies = {
+	-- 		{
+	-- 			"echasnovski/mini.icons",
+	-- 			opts = {},
+	-- 		},
+	-- 	},
+	-- 	lazy = false,
+	--
+	-- 	config = function()
+	-- 		require("oil").setup({
+	--
+	-- 			default_file_explorer = true,
+	--
+	-- 			columns = {
+	-- 				"icon",
+	-- 			},
+	--
+	-- 			buf_options = {
+	-- 				buflisted = false,
+	-- 				bufhidden = "hide",
+	-- 			},
+	--
+	-- 			delete_to_trash = true,
+	-- 			keymaps = {
+	-- 				["<ESC>"] = { callback = "actions.close", mode = "n" },
+	-- 				["q"] = { callback = "actions.close", mode = "n" },
+	--
+	-- 			}
+	-- 		})
+	--
+	-- 		local opts = { noremap = true, silent = false }
+	-- 		local map = vim.keymap
+	-- 		map.set("n", "<leader>e", "<CMD>Oil --float<CR>", { desc =  "Open oil" }, opts)
+	-- 	end,
+	--
+	--
+}

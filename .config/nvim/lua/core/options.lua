@@ -1,11 +1,13 @@
 local opt = vim.opt
 
+vim.cmd.colorscheme("retrobox")
+
 -- disable netrw
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- line numbers
-opt.relativenumber = true -- TODO: change to absolute in insert mode
+opt.relativenumber = true
 opt.number = true
 opt.numberwidth = 2 -- set number column width to 2 {default 4}
 
@@ -30,12 +32,13 @@ opt.cursorline = false
 -- appearance
 opt.termguicolors = true
 opt.background = "dark" -- defaults scheme to dark mode
--- opt.signcolumn = "yes"
+opt.signcolumn = "yes"
 opt.showmode = false
-opt.cmdwinheight = 1 -- check that this works
+opt.cmdheight = 0 -- check that this works
+opt.cmdwinheight = 3 -- check that this works
 
 -- backspace
--- opt.backspace = "indent, eol, start"
+opt.backspace = { "indent", "eol", "start" }
 
 -- clipboard
 opt.clipboard:append("unnamedplus") -- use system clipboard by default
@@ -47,9 +50,23 @@ opt.splitbelow = true
 -- conceal level
 opt.conceallevel = 2
 
--- editing
-opt.updatetime = 100
+-- line wrap and length
 opt.wrap = true
-opt.textwidth = 80
+opt.linebreak = true
 opt.breakindent = true
 opt.scrolloff = 10
+-- opt.textwidth = 0
+-- opt.wrapmargin = 0
+
+-- not sure
+opt.updatetime = 100
+
+-- vim.diagnostic.config({
+-- virtual_text = true,
+-- signs = true,
+-- update_in_insert = false,
+--
+-- 	float = {
+-- 		source = true,
+-- 	},
+-- })
