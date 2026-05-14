@@ -1,16 +1,16 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.config/oh-my-zsh
 
 
 # Theme
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Path variables
 export XDG_CONFIG_HOME=$HOME/.config
@@ -39,13 +39,16 @@ source $ZSH/oh-my-zsh.sh
 
 # p10k
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# starship
+eval "$(starship init zsh)"
 
 # ghcup environment
 [ -f "/Users/paultalma/.ghcup/env" ] && source "/Users/paultalma/.ghcup/env"
 
 # opam configuration
-# [[ ! -r /Users/paultalma/.opam/opam-init/init.zsh ]] || source /Users/paultalma/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+[[ ! -r /Users/paultalma/.opam/opam-init/init.zsh ]] || source /Users/paultalma/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 
 # >>> conda initialize >>>
@@ -63,3 +66,18 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/paultalma/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/paultalma/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/paultalma/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/paultalma/google-cloud-sdk/completion.zsh.inc'; fi
+
+# npm
+export PATH=~/.npm-global/bin:$PATH
+
+# opencode
+export PATH=/Users/paultalma/.opencode/bin:$PATH
+
+eval "$(direnv hook zsh)"
+source <(fzf --zsh)
